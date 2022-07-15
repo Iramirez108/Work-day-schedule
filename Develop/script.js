@@ -1,5 +1,3 @@
-
-
 //Using Moment.js to show the time 
 function checkTime(){
     var dayofWeek = moment().format("MMMM Do YYYY") 
@@ -18,21 +16,21 @@ function savedText(){
     var savedKey = object.keys(localStorage);
     console.log(savedKey);
     for(let i = 0; i < savedKey.lenght; i++){
-        if(document.getElementById(saved[i]) !=null){
-            document.getElementById(saved[i]).textContent = localStorage.getItem(savedKey[i]);
+        if(document.getElementById(savedKey[i]) !=null){
+            document.getElementById(savedKey[i]).textContent = localStorage.getItem(savedKey[i]);
         }
     }
 }
 
 function changeColor(){
     var currentTime = moment().format("H");
-    for (var i = 1; i < 10; i++){
-        var index = i.toString()
+    for (var i = 1; i < 10; i++) {
+        var index = i.toString();
 
         var div1 = document.getElementById("t".concat(index));
         var div2 = document.getElementById("text".concat(index));
 
-        if(Number.parseInt(div1.getAttribute("value"))< Number.parseInt(currentTime)
+        if(Number.parseInt(div1.getAttribute("value")) < Number.parseInt(currentTime)
         ) {
             div2.style.backgroundColor = "gray";
         } else if (
