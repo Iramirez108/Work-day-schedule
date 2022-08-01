@@ -1,4 +1,3 @@
-
 // GIVEN I am using a daily planner to create a schedule
 // WHEN I open the planner
 // THEN the current day is displayed at the top of the calendar
@@ -14,10 +13,33 @@
 // THEN the saved events persist
 
 //Using Moment.js to show the time 
-    var dayofWeek = moment().format("dddd,MMMM Do YYYY, h:mm:ss a");
+
+var dayofWeek = moment().format("dddd,MMMM Do YYYY")
     $("#currentDay").text(dayofWeek);
     savedText();
     changeColor();
+
+var saveButton = document.getElementById("save");
+
+var dailyTask2 = document.getElementById("text2")
+var dailyTask3 = document.getElementById("text3")
+var dailyTask4 = document.getElementById("text4")
+var dailyTask5 = document.getElementById("text5")
+var dailyTask6 = document.getElementById("text6")
+var dailyTask7 = document.getElementById("text7")
+var dailyTask8 = document.getElementById("text8")
+var dailyTask9 = document.getElementById("text9")
+
+
+function saveTask(){
+    var dailyTask1 = document.getElementById("text1").value
+    const task = {
+        task:task,
+    }
+    window.localStorage.setItem(key,JSON.stringify(task));
+}
+
+
 
 
 function saveToLocal(obj) {
